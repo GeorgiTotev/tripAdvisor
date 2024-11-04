@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Finder</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Trip Finder</h1>
+<form id="tripForm">
+    <h2>Select Your Preferred Seasons:</h2>
+    <label><input type="radio" name="season" value="Winter"> Winter</label><br>
+    <label><input type="radio" name="season" value="Spring"> Spring</label><br>
+    <label><input type="radio" name="season" value="Summer"> Summer</label><br>
+    <label><input type="radio" name="season" value="Autumn"> Autumn</label><br>
+    <button type="submit">Find Me a Trip!</button>
+</form>
+
+<script>
+    $(document).ready(function() {
+        $('#tripForm').submit(function(e) {
+            e.preventDefault();
+            const selectedSeason = $("input[name='season']:checked").val(); // Get the selected season
+
+            const jsonData = JSON.stringify({ seasons: selectedSeason }); // Construct the JSON with a single season
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8080/api/trips',
+                contentType: 'application/json',
+                data: jsonData,
+                success: function(response) {
+                    alert('Data saved successfully: ' + response);
+                },
+                error: function(xhr, status, error) {
+                    alert('Error saving data: ' + error);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

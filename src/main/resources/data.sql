@@ -1,21 +1,22 @@
 INSERT INTO DMNMODEL (name, dmn_file)
 VALUES ('Decision 1',
+        '' ||
         '<?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0ejedu8" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_0ejedu8" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="decisionId" name="Decision Location">
     <informationRequirement id="InformationRequirement_0bnvt0k">
       <requiredInput href="#InputData_0um8k9u" />
     </informationRequirement>
     <decisionTable id="DecisionTable_178b9xz" hitPolicy="FIRST">
-      <input id="Input_1" label="season">
+      <input id="Input_1" label="seasons" biodi:width="169.39447021484375">
         <inputExpression id="InputExpression_1" typeRef="string">
-          <text>season</text>
+          <text>seasons</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="OutputDecision" name="OutputDecision" typeRef="string" />
       <rule id="DecisionRule_1lrh7j0">
         <inputEntry id="UnaryTests_1il88sa">
-          <text>"winter"</text>
+          <text>"Winter"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_196w8pk">
           <text>"Alps"</text>
@@ -23,7 +24,7 @@ VALUES ('Decision 1',
       </rule>
       <rule id="DecisionRule_0imhe8i">
         <inputEntry id="UnaryTests_1rboxqf">
-          <text>"summer"</text>
+          <text>"Summer"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1to8c2j">
           <text>"Ibiza"</text>
@@ -39,7 +40,7 @@ VALUES ('Decision 1',
       </rule>
     </decisionTable>
   </decision>
-  <inputData id="InputData_0um8k9u" name="season" />
+  <inputData id="InputData_0um8k9u" name="seasons" />
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <dmndi:DMNShape dmnElementRef="decisionId">
@@ -56,5 +57,7 @@ VALUES ('Decision 1',
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
+
+
 ');
 

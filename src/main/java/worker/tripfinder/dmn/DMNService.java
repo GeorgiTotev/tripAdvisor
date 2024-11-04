@@ -1,9 +1,9 @@
 package worker.tripfinder.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecision;
+import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
-import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayInputStream;
