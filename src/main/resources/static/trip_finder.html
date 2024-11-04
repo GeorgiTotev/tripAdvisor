@@ -17,6 +17,8 @@
     <button type="submit">Find Me a Trip!</button>
 </form>
 
+<div id="result"></div> <!-- Div to display the DMN execution result -->
+
 <script>
     $(document).ready(function() {
         $('#tripForm').submit(function(e) {
@@ -25,6 +27,7 @@
 
             const jsonData = JSON.stringify({ seasons: selectedSeason }); // Construct the JSON with a single season
 
+            // First AJAX request to save the trip preferences
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:8080/api/trips',
@@ -32,12 +35,30 @@
                 data: jsonData,
                 success: function(response) {
                     alert('Data saved successfully: ' + response);
+
+                    // Second AJAX request to execute DMN after saving preferences
+                    executeDMN(selectedSeason);
                 },
                 error: function(xhr, status, error) {
                     alert('Error saving data: ' + error);
                 }
             });
         });
+
+        function executeDMN(season) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8080/api/dmn/1/execute', // Adjust ID as needed
+                contentType: 'application/json',
+                data: JSON.stringify({ seasons: season }), // Send the selected season
+                success: function(dmnResponse) {
+                    $('#result').html('<pre>' + dmnResponse + '</pre>'); // Display the DMN execution result
+                },
+                error: function(xhr, status, error) {
+                    alert('Error executing DMN: ' + error);
+                }
+            });
+        }
     });
 </script>
 </body>
