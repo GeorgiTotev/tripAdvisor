@@ -2,14 +2,14 @@ INSERT INTO DMNMODEL (name, dmn_file)
 VALUES ('Decision 1',
         '<?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0ejedu8" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
-  <decision id="decisionId" name="Decision 1">
+  <decision id="decisionId" name="Decision Location">
     <informationRequirement id="InformationRequirement_0bnvt0k">
       <requiredInput href="#InputData_0um8k9u" />
     </informationRequirement>
     <decisionTable id="DecisionTable_178b9xz" hitPolicy="FIRST">
-      <input id="Input_1" label="input">
+      <input id="Input_1" label="season">
         <inputExpression id="InputExpression_1" typeRef="string">
-          <text>input</text>
+          <text>season</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="OutputDecision" name="OutputDecision" typeRef="string" />
@@ -39,7 +39,7 @@ VALUES ('Decision 1',
       </rule>
     </decisionTable>
   </decision>
-  <inputData id="InputData_0um8k9u" name="input" />
+  <inputData id="InputData_0um8k9u" name="season" />
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <dmndi:DMNShape dmnElementRef="decisionId">
