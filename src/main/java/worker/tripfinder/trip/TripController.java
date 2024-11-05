@@ -1,4 +1,4 @@
-package worker.tripfinder.dmn;
+package worker.tripfinder.trip;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.ResponseEntity;
@@ -20,22 +20,13 @@ public class TripController {
         ObjectMapper objectMapper = new ObjectMapper();
         try (FileWriter fileWriter = new FileWriter("trip_preferences.json")) {
             objectMapper.writeValue(fileWriter, preferences);
+            System.out.println("Received preferences: " + preferences);
             return ResponseEntity.ok("Preferences saved successfully!");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Received preferences: " + preferences);
             return ResponseEntity.status(500).body("Failed to save preferences.");
         }
     }
 
-    public static class TripPreferences {
-        private String seasons;
-
-        public String getSeasons() {
-            return seasons;
-        }
-
-        public void setSeasons(String seasons) {
-            this.seasons = seasons;
-        }
-    }
 }

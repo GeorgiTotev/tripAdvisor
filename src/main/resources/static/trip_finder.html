@@ -4,62 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Finder</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-<h1>Trip Finder</h1>
-<form id="tripForm">
-    <h2>Select Your Preferred Seasons:</h2>
-    <label><input type="radio" name="season" value="Winter"> Winter</label><br>
-    <label><input type="radio" name="season" value="Spring"> Spring</label><br>
-    <label><input type="radio" name="season" value="Summer"> Summer</label><br>
-    <label><input type="radio" name="season" value="Autumn"> Autumn</label><br>
-    <button type="submit">Find Me a Trip!</button>
-</form>
 
-<div id="result"></div> <!-- Div to display the DMN execution result -->
+<header>
+    <h1>Welcome to the Trip Finder</h1>
+</header>
 
-<script>
-    $(document).ready(function() {
-        $('#tripForm').submit(function(e) {
-            e.preventDefault();
-            const selectedSeason = $("input[name='season']:checked").val(); // Get the selected season
+<div class="container">
+    <form id="tripForm">
+        <h2>Select Your Preferred Seasons:</h2>
+        <label><input type="radio" name="season" value="Winter"> Winter</label>
+        <label><input type="radio" name="season" value="Spring"> Spring</label>
+        <label><input type="radio" name="season" value="Summer"> Summer</label>
+        <label><input type="radio" name="season" value="Autumn"> Autumn</label>
 
-            const jsonData = JSON.stringify({ seasons: selectedSeason }); // Construct the JSON with a single season
+        <h2>Select Your Preferred Activities:</h2>
+        <label><input type="radio" name="activity" value="Beach"> Beach</label>
+        <label><input type="radio" name="activity" value="Ski"> Ski</label>
+        <label><input type="radio" name="activity" value="Chill"> Chill</label>
+        <label><input type="radio" name="activity" value="Mountain"> Mountain</label>
 
-            // First AJAX request to save the trip preferences
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost:8080/api/trips',
-                contentType: 'application/json',
-                data: jsonData,
-                success: function(response) {
-                    alert('Data saved successfully: ' + response);
+        <button type="submit">Find Me a Trip!</button>
+    </form>
 
-                    // Second AJAX request to execute DMN after saving preferences
-                    executeDMN(selectedSeason);
-                },
-                error: function(xhr, status, error) {
-                    alert('Error saving data: ' + error);
-                }
-            });
-        });
+    <div id="result"></div>
+</div>
 
-        function executeDMN(season) {
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost:8080/api/dmn/1/execute', // Adjust ID as needed
-                contentType: 'application/json',
-                data: JSON.stringify({ seasons: season }), // Send the selected season
-                success: function(dmnResponse) {
-                    $('#result').html('<pre>' + dmnResponse + '</pre>'); // Display the DMN execution result
-                },
-                error: function(xhr, status, error) {
-                    alert('Error executing DMN: ' + error);
-                }
-            });
-        }
-    });
-</script>
 </body>
 </html>
