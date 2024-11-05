@@ -20,13 +20,13 @@ public class DMNService {
     }
 
     public DmnDecisionTableResult executeDecision(Long dmnId, Map<String, Object> variables) {
-        // Load DMN file from database
+        // load DMN from db
         DMNModel dmnModel = dmnRepository.findById(dmnId).orElseThrow(() -> new RuntimeException("DMN not found"));
 
-        // Parse DMN decision
+        // parse the last table in the dmn
         DmnDecision decision = dmnEngine.parseDecision("decisionId", new ByteArrayInputStream(dmnModel.getDmnFile()));
 
-        // Evaluate the decision table with input variables
+        // eval the table with inputs
         return dmnEngine.evaluateDecisionTable(decision, variables);
     }
 }

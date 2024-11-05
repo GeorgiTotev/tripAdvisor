@@ -1,0 +1,45 @@
+Architecture Diagram Request for Trip Finder Application
+Objective: Create a high-level architecture diagram for a Trip Finder web application that showcases the interactions between the frontend, backend, database, and external resources.
+
+Components:
+
+Client (Frontend):
+
+Technologies: HTML, CSS, JavaScript, AJAX (jQuery)
+Description: This component represents the user interface of the Trip Finder application. It allows users to select their preferred seasons and activities via radio buttons. Upon submission, it sends user preferences to the backend using AJAX requests and receives destination recommendations.
+Server (Backend):
+
+Framework: Spring Boot
+Components:
+DmnController:
+Handles incoming HTTP requests from the frontend. Receives user input, triggers DMN execution, and returns the results.
+DmnService:
+Contains business logic to process the DMN model and execute decisions based on user input.
+Data Access Layer:
+Utilizes JPA to communicate with the H2 in-memory database for storing and retrieving DMN models and decision data.
+DMN Engine:
+Executes DMN decision tables and returns the results based on user-selected preferences.
+Database:
+
+Type: H2 (In-memory)
+Description: Stores DMN models, user preferences, and decision data. The database is initialized with DMN models upon application startup.
+Static Resources:
+
+Description: A dedicated folder within the project where images of travel destinations are stored. These images are served based on the DMN execution results.
+Data Flow:
+
+User Input: The user interacts with the web UI to select their travel preferences (season and activity).
+AJAX Request: Upon submission, the frontend sends an AJAX request containing the user's preferences to the backend.
+DMN Execution: The backend receives the request, processes it in the DmnController, and invokes the DmnService to execute the DMN decision logic.
+Result Generation: The DMN engine evaluates the decision table and determines the recommended travel destination. This result is formatted and sent back to the frontend.
+UI Update: The frontend receives the response, including the destination name and corresponding image path, and updates the UI to display the recommended travel destination and its image.
+Diagram Layout Instructions:
+
+Top Level: Client (Frontend)
+Connect to the Server (Backend) via labeled arrows indicating "HTTP Requests."
+Middle Level: Server (Backend) components stacked vertically:
+DmnController → DmnService → Data Access Layer → DMN Engine.
+Arrows connecting these components should indicate flow and interactions.
+Bottom Level: Database (H2) connected to the Data Access Layer.
+Side Level: Static Resources (Images) connected to the frontend with arrows indicating access for displaying images.
+Include labels for all components and data flow arrows to clarify interactions.

@@ -2,6 +2,7 @@ package worker.tripfinder.dmn;
 
 import jakarta.persistence.*;
 
+//so that it is turned into a table (curr in h2)
 @Entity
 @Table(name="DMNMODEL")
 public class DMNModel {
@@ -12,7 +13,7 @@ public class DMNModel {
     private String name;
 
     @Lob
-    private byte[] dmnFile; // save dmn file
+    private byte[] dmnFile; // here the dmn file like xml
 
     public DMNModel() {}
 

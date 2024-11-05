@@ -16,7 +16,7 @@ public class TripController {
 
     @PostMapping("/trips")
     public ResponseEntity<String> saveTripPreferences(@RequestBody TripPreferences preferences) {
-        // Convert to JSON and save to file
+        // input from html -> json
         ObjectMapper objectMapper = new ObjectMapper();
         try (FileWriter fileWriter = new FileWriter("trip_preferences.json")) {
             objectMapper.writeValue(fileWriter, preferences);

@@ -21,7 +21,8 @@ VALUES ('Decision 1',
           <text>activity</text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="OutputDecision" name="OutputDecision" typeRef="string" biodi:width="290.18348693847656" />
+      <output id="Output_1" label="OutputDecision" name="OutputDecision" typeRef="string" biodi:width="270.90826416015625" />
+      <output id="OutputClause_0eyg02l" label="ImagePath" name="ImagePath" typeRef="string" />
       <rule id="DecisionRule_1lrh7j0">
         <inputEntry id="UnaryTests_1il88sa">
           <text>"Winter"</text>
@@ -31,6 +32,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_196w8pk">
           <text>"Maui, Hawaii"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gvstsc">
+          <text>"images/maui.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06gux9n">
@@ -43,6 +47,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_14hvtap">
           <text>"Zermatt, Switzerland"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0nqhzac">
+          <text>"images/zermatt.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1l5ccok">
         <inputEntry id="UnaryTests_1ridlt6">
@@ -53,6 +60,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_1xy19mr">
           <text>"Maldives"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17lnd2n">
+          <text>"images/maldives.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16nm9n1">
@@ -65,6 +75,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_1bychiu">
           <text>"Banff, Canada"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_14ukf6m">
+          <text>"images/banff.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0znnfe5">
         <inputEntry id="UnaryTests_1i2bhd4">
@@ -75,6 +88,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_0m8wt5z">
           <text>"Amalfi Coast, Italy"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rp6uy1">
+          <text>"images/amalfi_coast.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_064hhoi">
@@ -87,6 +103,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_0j200dz">
           <text>"Whistler, Canada"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0wtxtp5">
+          <text>"images/whistler.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0hbipob">
         <inputEntry id="UnaryTests_0xgetvs">
@@ -97,6 +116,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_1ldtex3">
           <text>"Bali, Indonesia"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m1kzjb">
+          <text>"images/bali.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04kvxu5">
@@ -109,6 +131,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_17hdee8">
           <text>"Aspen, Colorado, USA"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_13iukus">
+          <text>"images/aspen.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0imhe8i">
         <inputEntry id="UnaryTests_1rboxqf">
@@ -119,6 +144,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_1to8c2j">
           <text>"Ibiza"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01lmmqy">
+          <text>"images/ibiza.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00bcran">
@@ -131,6 +159,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_1f2ebwt">
           <text>"Hintertux Glacier, Austria"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1iax4ht">
+          <text>"images/hintertux.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0tcwqug">
         <inputEntry id="UnaryTests_1m8dp2m">
@@ -141,6 +172,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_1m03faq">
           <text>"Santorini, Greece"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xyby7p">
+          <text>"images/santorini.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lcd54i">
@@ -153,6 +187,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_13od6ir">
           <text>"Chamonix-Mont-Blanc, France"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1wwe5cr">
+          <text>"images/mont_blanc.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1gxs0ml">
         <inputEntry id="UnaryTests_0bc3oqs">
@@ -163,6 +200,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_0c2o30b">
           <text>"Cancún, Mexico"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xfku4r">
+          <text>"images/cancun.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0pv7cnz">
@@ -175,6 +215,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_1482uam">
           <text>"Cortina d''Ampezzo, Italy"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_18r3bru">
+          <text>"images/cortina.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0t69lkj">
         <inputEntry id="UnaryTests_18z5zjl">
@@ -185,6 +228,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_1jak4lm">
           <text>"Tuscany, Italy"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sto7pz">
+          <text>"images/tuscany.jpg"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1k4adu7">
@@ -197,6 +243,9 @@ VALUES ('Decision 1',
         <outputEntry id="LiteralExpression_1s8u0e3">
           <text>"Banff National Park, Alberta, Canada"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0xgg29t">
+          <text>"images/banff2.jpg"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1oy8yre">
         <inputEntry id="UnaryTests_18tp73g">
@@ -207,6 +256,9 @@ VALUES ('Decision 1',
         </inputEntry>
         <outputEntry id="LiteralExpression_1fzrm3y">
           <text>"no season and activity chosen"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wpzjc6">
+          <text>""</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -237,5 +289,6 @@ VALUES ('Decision 1',
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
+
 ');
 
